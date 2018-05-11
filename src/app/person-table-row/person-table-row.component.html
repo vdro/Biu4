@@ -1,0 +1,39 @@
+<td [ngClass]="{'bg-info': isInEditMode, 'bg-danger': isInDeleteMode}">
+  {{model.id}}
+</td>
+<td [ngClass]="{'bg-info': isInEditMode, 'bg-danger': isInDeleteMode}">
+    <span *ngIf ="!isInEditMode">{{model.firstname}}</span>
+    <input type="text" *ngIf ="isInEditMode" [(ngModel)]=model.firstname />
+</td>
+<td [ngClass]="{'bg-info': isInEditMode, 'bg-danger': isInDeleteMode}">
+    <span *ngIf ="!isInEditMode">{{model.lastname}}</span>
+    <input type="text" *ngIf ="isInEditMode" [(ngModel)]=model.lastname/>
+</td>
+<td [ngClass]="{'bg-info': isInEditMode, 'bg-danger': isInDeleteMode}">
+    <span *ngIf ="!isInEditMode">{{model.gender}}</span>
+    <input type="text" *ngIf ="isInEditMode" [(ngModel)]=model.gender/>
+</td>
+<td [ngClass]="{'bg-info': isInEditMode, 'bg-danger': isInDeleteMode}">
+    <span *ngIf ="!isInEditMode">{{model.email}}</span>
+    <input type="text" *ngIf ="isInEditMode" [(ngModel)]=model.email/>
+</td>
+<td [ngClass]="{'bg-info': isInEditMode, 'bg-danger': isInDeleteMode}">
+    <span *ngIf ="!isInEditMode">{{model.age}}</span>
+    <input type="text" *ngIf ="isInEditMode" [(ngModel)]=model.age/>
+</td>
+<td [ngClass]="{'bg-info': isInEditMode, 'bg-danger': isInDeleteMode}">
+    <span *ngIf ="!isInEditMode">{{model.birthday | date:'yyyy-MM-dd'}}</span>
+    <input type="text" *ngIf ="isInEditMode" [(ngModel)]=model.birthday />
+</td>
+<td [ngClass]="{'bg-info': isInEditMode, 'bg-danger': isInDeleteMode}">
+    <span *ngIf ="!isInEditMode">{{model.income | currency}}</span>
+    <input type="text" *ngIf ="isInEditMode" [(ngModel)]=model.income />
+</td>
+<td [ngClass]="{'bg-info': isInEditMode, 'bg-danger': isInDeleteMode}">
+  <button *ngIf ="!isInEditMode && !isInDeleteMode" (click)="editRow()" class="btn btn-secondary">Edit</button>
+  <button *ngIf ="!isInEditMode && !isInDeleteMode" (click)="deleteRow()" class="btn btn-secondary">Delete</button>
+  <button *ngIf ="isInEditMode" (click)="saveRow()" class="btn btn-success">Save</button>
+  <button *ngIf ="isInEditMode" (click)="undoRow()" class="btn btn-warning">Undo</button>
+  <button *ngIf ="isInDeleteMode" (click)="confirmDelete()" class="btn btn-success">Save</button>
+  <button *ngIf ="isInDeleteMode" (click)="undoDelete()" class="btn btn-warning">Undo</button>
+</td>
