@@ -11,4 +11,5 @@ describe('people-table App', () => {
     page.navigateTo();
     expect(page.getParagraphText()).toEqual('app works!');
   });
+  
 });
