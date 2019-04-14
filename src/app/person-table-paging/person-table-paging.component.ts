@@ -7,13 +7,11 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core'
 })
 export class PersonTablePagingComponent implements OnInit {
 
-  //pod te pola inne komponenty będą mogły podpinac swoje metody
   @Output() next: EventEmitter<any> = new EventEmitter();  
   @Output() prev: EventEmitter<any> = new EventEmitter();
   
-  //te metody są użyte w definicji szablonu
   clickOnNext(){
-    this.next.emit(null);//wywołanie zdarzenia
+    this.next.emit(null);
   }
 
   clickOnPrev(){

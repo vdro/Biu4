@@ -1,5 +1,5 @@
 
-import { people } from './data'; //-> import danych o osobach
+import { people } from './data'; 
 import { Person } from "app/models/person";
 
 export class PagingInfo {

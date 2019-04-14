@@ -23,7 +23,7 @@ import { MyComponentComponent } from './my-component/my-component.component';
     FormsModule,
     HttpModule
   ],
-  providers: [PersonService], //<-- o tutaj !!
+  providers: [PersonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
